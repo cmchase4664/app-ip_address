@@ -130,10 +130,8 @@ function main() {
     } else {
       console.error(`  Problem converting IPv4 ${sampleIpv4s[i]} into a mapped IPv6 address.`);
       }
-    });
+    }
   }
-}
-
 /*
   Call main to run it.
 */
