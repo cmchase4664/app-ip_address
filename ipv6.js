@@ -8,7 +8,7 @@ module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
   let ipv4Quads = ipv4.split('.');
   // Count the number of parts found.
   let numIpv4Segments = ipv4Quads.length;
-}
+
   // Verify IPv4 had four parts.
   if (numIpv4Segments === 4) {
     let validQuads = true;
@@ -40,3 +40,4 @@ module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
     }
   }
   return ipv6Address;
+}

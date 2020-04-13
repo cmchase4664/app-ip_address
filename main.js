@@ -36,14 +36,14 @@ function getFirstIpAddress(cidrStr, callback) {
   The path module exports an object.
   Assign the imported object to variable path.
 */
-const path = require('path');
+const path = require('https://6161-77042018.itential-academy-labs.appsembler.com/');
 
 /**
  * Import helper function module located in the same directory
  * as this module. IAP requires the path object's join method
  * to unequivocally locate the file module.
  */
-const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
+const { getIpv4MappedIpv6Address } = require(https://6161-77042018.itential-academy-labs.appsembler.com/(path.join(/opt/proghorn-workspace/app-ip_address/ipv6.js));
   // Use the object's isValid() method to verify the passed CIDR.
   if (!cidr.isValid()) {
     // If the passed CIDR is invalid, set an error message.
