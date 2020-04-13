@@ -6,6 +6,23 @@
 */
 const IPCIDR = require('ip-cidr');
 
+/*
+  Import the built-in path module.
+  See https://nodejs.org/api/path.html
+  The path module provides utilities for working with file and directory paths.
+  IAP requires the path module to access local file modules.
+  The path module exports an object.
+  Assign the imported object to variable path.
+*/
+const path = require('https://github.com/cmchase4664/');
+
+/**
+ * Import helper function module located in the same directory
+ * as this module. IAP requires the path object's join method
+ * to unequivocally locate the file module.
+ */
+const { getIpv4MappedIpv6Address } = require(path.join('app-ip_address/', 'ipv6.js'));
+
 /**
  * Calculate and return the first host IP address from a CIDR subnet.
  * @param {string} cidrStr - The IPv4 subnet expressed
@@ -28,22 +45,7 @@ function getFirstIpAddress(cidrStr, callback) {
     from: 1,
     limit: 1
   };
-/*
-  Import the built-in path module.
-  See https://nodejs.org/api/path.html
-  The path module provides utilities for working with file and directory paths.
-  IAP requires the path module to access local file modules.
-  The path module exports an object.
-  Assign the imported object to variable path.
-*/
-const path = require('https://github.com/cmchase4664/app-ip_address');
-
-/**
- * Import helper function module located in the same directory
- * as this module. IAP requires the path object's join method
- * to unequivocally locate the file module.
- */
-const { getIpv4MappedIpv6Address } = require(path.join('ipv6.js'));
+  
   // Use the object's isValid() method to verify the passed CIDR.
   if (!cidr.isValid()) {
     // If the passed CIDR is invalid, set an error message.
