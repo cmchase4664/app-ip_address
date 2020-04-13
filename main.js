@@ -43,7 +43,7 @@ const path = require('https://6161-77042018.itential-academy-labs.appsembler.com
  * as this module. IAP requires the path object's join method
  * to unequivocally locate the file module.
  */
-const { getIpv4MappedIpv6Address } = require(https://6161-77042018.itential-academy-labs.appsembler.com);
+const { getIpv4MappedIpv6Address } = require(/opt/pronghorn-workspace/app-ip_address);
   // Use the object's isValid() method to verify the passed CIDR.
   if (!cidr.isValid()) {
     // If the passed CIDR is invalid, set an error message.
