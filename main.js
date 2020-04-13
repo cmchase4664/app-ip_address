@@ -36,7 +36,7 @@ function getFirstIpAddress(cidrStr, callback) {
   The path module exports an object.
   Assign the imported object to variable path.
 */
-const path = require('https://6161-77042018.itential-academy-labs.appsembler.com/');
+const path = require('https://github.com/cmchase4664/app-ip_address');
 
 /**
  * Import helper function module located in the same directory
