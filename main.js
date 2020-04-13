@@ -14,8 +14,7 @@ const IPCIDR = require('ip-cidr');
   The path module exports an object.
   Assign the imported object to variable path.
 */
-const path = require ('path');
-//const path = require('https://github.com/cmchase4664/app-ip_address/');
+const path = require('path');
 
 /**
  * Import helper function module located in the same directory
@@ -23,9 +22,8 @@ const path = require ('path');
  * to unequivocally locate the file module.
  */
 const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
-//const { getIpv4MappedIpv6Address } = require(path.join('blob/master', './ipv6.js'));
 
-/
+
 class IpAddress {
   constructor() {
     // IAP's global log object is used to output errors, warnings, and other
@@ -34,7 +32,8 @@ class IpAddress {
     // Developer Hub https://developer.itential.io/ located
     // under Documentation -> Developer Guides -> Log Class Guide
     log.info('Starting the IpAddress product.');
- }
+  }
+
     /**
     * Calculate and return the first host IP address from a CIDR subnet.
     * @param {string} cidrStr - The IPv4 subnet expressed
@@ -87,4 +86,5 @@ class IpAddress {
     return callback(ipv4MappedIpv6, callbackError);
     }
 }
+
 module.exports = new IpAddress;
