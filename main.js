@@ -14,14 +14,16 @@ const IPCIDR = require('ip-cidr');
   The path module exports an object.
   Assign the imported object to variable path.
 */
-const path = require('https://github.com/cmchase4664/');
+const path = require ('path');
+//const path = require('https://github.com/cmchase4664/app-ip_address/');
 
 /**
  * Import helper function module located in the same directory
  * as this module. IAP requires the path object's join method
  * to unequivocally locate the file module.
  */
-const { getIpv4MappedIpv6Address } = require(path.join('app-ip_address/', 'ipv6.js'));
+const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
+//const { getIpv4MappedIpv6Address } = require(path.join('blob/master', './ipv6.js'));
 
 /**
  * Calculate and return the first host IP address from a CIDR subnet.
@@ -55,12 +57,21 @@ function getFirstIpAddress(cidrStr, callback) {
     // Notice the destructering assignment syntax to get the value of the first array's element.
     [firstIpAddress] = cidr.toArray(options);
   }
+
+// Calling the getIpv4MappedIpv6Address() to calculate the IPv4-mapped IPv6 address for the passed IPv4 address.
+  let ipv4MappedIpv6 = null;
+    if (!cidr.isValid()) {
+      ipv4MappedIpv6 = (`"IPv4":"${firstIpAddress}" , "IPv6":"${ipv4MappedIpv6}"`)
+    } else {
+      ipv4MappedIpv6 = (`"IPv4":"${firstIpAddress}" , "IPv6":"` + getIpv4MappedIpv6Address(firstIpAddress) +'"');
+    }
+
   // Call the passed callback function.
   // Node.js convention is to pass error data as the first argument to a callback.
   // The IAP convention is to pass returned data as the first argument and error
   // data as the second argument to the callback function.
-  return callback(firstIpAddress, callbackError);
-}
+  return callback(ipv4MappedIpv6, callbackError);
+  }
 
 /**
  * Calculates an IPv4-mapped IPv6 address.
